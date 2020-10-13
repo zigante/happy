@@ -1,0 +1,20 @@
+# @ZigTech - Happy
+
+### Todo
+
+- [ ] Refactor project to organize folders
+- [ ] Display a list to select UF and country
+- [ ] Only show places from the selected city
+- [ ] Auto-detect city
+- [ ] Integrate database
+- [ ] Redux Store
+- [ ] Cache Invalidation
+- [ ] Version Context
+- [ ] Authentication Context
+- [ ] i18n Provider
+- [ ] Make this a 'Burger Finder Application'
+- [ ] Show recommendations
+- [ ] Sync mobile experience
+- [ ] Configure a Monorepo to place and share all configurations
+
+### Doing
