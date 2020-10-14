@@ -1,0 +1,26 @@
+{
+  "extends": "./tsconfig.paths.json",
+  "compilerOptions": {
+    "target": "ES6",
+    "module": "CommonJS",
+    "declaration": true,
+    "declarationMap": true,
+    "sourceMap": true,
+    "outDir": "dist",
+    "strict": true,
+    "noImplicitAny": true,
+    "alwaysStrict": true,
+    "noUnusedParameters": true,
+    "moduleResolution": "node",
+    "esModuleInterop": true,
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "skipLibCheck": true,
+    "resolveJsonModule": true,
+    "forceConsistentCasingInFileNames": true,
+    "strictPropertyInitialization": false
+  },
+  "compileOnSave": true,
+  "exclude": ["node_modules", "debug", "test"],
+  "include": ["src"]
+}

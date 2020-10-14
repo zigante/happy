@@ -1,0 +1,14 @@
+.vscode
+node_modules
+uploads/*.jpg
+uploads/*.jpeg
+uploads/*.png
+uploads/*.gif
+dist
+
+*.log
+*.env
+*.env.*
+
+package-lock.json
+yarn.lock
