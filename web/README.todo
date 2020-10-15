@@ -2,7 +2,9 @@
 
 ### Todo
 
+- [ ] Remove files from versioning
 - [ ] Refactor project to organize folders
+- [ ] Configure typescript paths
 - [ ] Display a list to select UF and country
 - [ ] Only show places from the selected city
 - [ ] Auto-detect city
@@ -12,10 +14,10 @@
 - [ ] Version Context
 - [ ] Authentication Context
 - [ ] i18n Provider
-- [ ] Make this a 'Burger Finder Application'
-- [ ] Show recommendations
 - [ ] Sync mobile experience
 - [ ] Configure a Monorepo to place and share all configurations
+- [ ] Show recommendations
+- [ ] Integrate third party applications
 - [ ] Crate IA to contact owners using scrapped infos
 
 ### Doing
