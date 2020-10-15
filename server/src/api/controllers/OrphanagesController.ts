@@ -3,10 +3,12 @@ import { getRepository } from 'typeorm';
 import OrphanageBuilder from '../builders/OrphanageBuilder';
 import Orphanage from '../models/Orphanage';
 import OrphanageImage from '../models/OrphanageImage';
+import OrphanageValidator from '../validators/OrphanageValidator';
 
 class OrphanagesController {
   private _repository = getRepository(Orphanage);
   private _builder = new OrphanageBuilder();
+  private _validator = new OrphanageValidator();
 
   index: RequestHandler = (_req, res) =>
     this._repository
@@ -22,10 +24,17 @@ class OrphanagesController {
 
   create: RequestHandler = ({ body, files }, res) => {
     const images = (files as Express.Multer.File[]).map(({ filename: path }) => ({ path } as OrphanageImage));
-    const payload = this._repository.create({ ...body, images });
+    const { openOnWeekends } = body as Orphanage;
 
-    return this._repository
-      .save(payload)
+    const payload = this._repository.create({
+      ...body,
+      openOnWeekends: typeof openOnWeekends === 'boolean' ? openOnWeekends : openOnWeekends === 'true',
+      images,
+    });
+
+    return this._validator
+      .validate((payload as unknown) as Orphanage)
+      .then(() => this._repository.save(payload))
       .then(data => this._builder.render((data as unknown) as Orphanage))
       .then(orphanage => res.status(201).send(orphanage));
   };

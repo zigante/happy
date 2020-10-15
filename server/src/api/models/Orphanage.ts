@@ -19,6 +19,9 @@ class Orphanage {
   about: string;
 
   @Column()
+  contact: string;
+
+  @Column()
   instructions: string;
 
   @Column()

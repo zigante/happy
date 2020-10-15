@@ -11,7 +11,7 @@ class OrphanageImageBuilder {
     };
   };
 
-  renderMany = (images: OrphanageImage[]): OrphanageImage[] => images.map(image => this.render(image));
+  renderMany = (images: OrphanageImage[]): OrphanageImage[] => images.map(this.render);
 }
 
 export default OrphanageImageBuilder;

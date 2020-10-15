@@ -5,7 +5,18 @@ class OrphanagesBuilder {
   private _imageBuilder = new OrphanageImageBuilder();
 
   render = (orphanage: Orphanage): Orphanage => {
-    const { about, id, instructions, latitude, images, longitude, name, openOnWeekends, openingHours } = orphanage;
+    const {
+      about,
+      contact,
+      id,
+      instructions,
+      latitude,
+      images,
+      longitude,
+      name,
+      openOnWeekends,
+      openingHours,
+    } = orphanage;
 
     return {
       id,
@@ -13,6 +24,7 @@ class OrphanagesBuilder {
       latitude,
       longitude,
       about,
+      contact,
       instructions,
       openOnWeekends,
       openingHours,
@@ -20,7 +32,7 @@ class OrphanagesBuilder {
     };
   };
 
-  renderMany = (orphanages: Orphanage[]): Orphanage[] => orphanages.map(orphanage => this.render(orphanage));
+  renderMany = (orphanages: Orphanage[]): Orphanage[] => orphanages.map(this.render);
 }
 
 export default OrphanagesBuilder;
