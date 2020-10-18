@@ -2,7 +2,6 @@ import { RequestHandler } from 'express';
 import { getRepository } from 'typeorm';
 import OrphanageBuilder from '../builders/OrphanageBuilder';
 import Orphanage from '../models/Orphanage';
-import OrphanageImage from '../models/OrphanageImage';
 import OrphanageValidator from '../validators/OrphanageValidator';
 
 class OrphanagesController {
@@ -23,7 +22,7 @@ class OrphanagesController {
       .then(data => res.status(200).send(data));
 
   create: RequestHandler = ({ body, files }, res) => {
-    const images = (files as Express.Multer.File[]).map(({ filename: path }) => ({ path } as OrphanageImage));
+    const images = (files as Express.Multer.File[])?.map(({ filename: path }) => ({ path })) || [];
     const { openOnWeekends } = body as Orphanage;
 
     const payload = this._repository.create({

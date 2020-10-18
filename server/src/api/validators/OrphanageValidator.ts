@@ -12,8 +12,8 @@ class OrphanageValidator {
 
   schema = Yup.object().shape({
     name: Yup.string().required(),
-    about: Yup.string().required().max(300),
-    instructions: Yup.string().required(),
+    about: Yup.string().max(300),
+    instructions: Yup.string(),
     latitude: Yup.number().required(),
     longitude: Yup.number().required(),
     openingHours: Yup.string().required(),
